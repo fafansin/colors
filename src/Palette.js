@@ -28,6 +28,10 @@ export default class Palette extends Component{
                         <ColorBox key={color.name} background={color[this.state.format]} name={color.name} />)
                     )}
                 </div>
+                <footer className="Palette-footer">
+                    {this.props.palette.paletteName}
+                    <span className="emoji">{this.props.palette.emoji}</span>
+                </footer>
             </div>
         )
     }

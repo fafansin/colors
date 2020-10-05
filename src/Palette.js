@@ -25,7 +25,12 @@ export default class Palette extends Component{
                     changeFormat={this.changeFormat}/>
                 <div className="Palette-colors">
                     {this.props.palette.colors[this.state.level].map((color) => (
-                        <ColorBox key={color.name} background={color[this.state.format]} name={color.name} />)
+                        <ColorBox 
+                            paletteId={this.props.palette.id} 
+                            id={color.id}
+                            key={color.id} 
+                            background={color[this.state.format]} 
+                            name={color.name} />)
                     )}
                 </div>
                 <footer className="Palette-footer">

@@ -32,6 +32,7 @@ export default class Navbar extends Component{
                 <div className="logo">
                     <Link to="/">reactcolorpicker</Link>
                 </div>
+                {this.props.showingAllColors && 
                 <div className="slider-container">
                     <span>Level: {this.props.level}</span>
                     <div className="slider">
@@ -43,6 +44,7 @@ export default class Navbar extends Component{
                             onAfterChange={this.props.changeLevel}/>
                     </div>
                 </div>
+                }
                 <div className="select-container">
                     <Select onChange={this.handleFormatChange} value={this.state.format}>
                         <MenuItem value="hex">HEX - #ffffff</MenuItem>
@@ -53,7 +55,7 @@ export default class Navbar extends Component{
                 <Snackbar 
                     anchorOrigin={{vertical:"bottom", horizontal:"left"}} 
                     open={this.state.open}
-                    autoHideDuration="300"
+                    autoHideDuration={300}
                     message={<span id="message-id">Format Changed to {this.state.format.toUpperCase()}</span>}
                     ContentProps={{
                         "aria-describedby":"message-id"
